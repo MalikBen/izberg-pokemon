@@ -4,10 +4,14 @@ import client from 'api/client';
 
 import PokemonList from 'components/PokemonList/PokemonList';
 
+const containerStyle = 'container mx-auto';
+
 const App = () => {
   return (
     <ApolloProvider client={client}>
-      <PokemonList />
+      <div className={containerStyle}>
+        <PokemonList />
+      </div>
     </ApolloProvider>
   );
 };

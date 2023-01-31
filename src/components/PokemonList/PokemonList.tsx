@@ -16,7 +16,7 @@ const PokemonList = () => {
 
   return (
     <div>
-      <div className="grid-container">
+      <div className="grid grid-cols-4">
         {pokemons.map((pokemon: Pokemon) => (
           <PokemonCard key={pokemon.name} pokemon={pokemon} />
         ))}

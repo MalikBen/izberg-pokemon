@@ -4,7 +4,6 @@ const GET_POKEMONS = gql`
   query samplePokeAPIquery {
     pokemon_v2_pokemon {
       id
-      name
       pokemon_v2_pokemontypes {
         id
         pokemon_v2_type {
@@ -12,10 +11,12 @@ const GET_POKEMONS = gql`
           name
         }
       }
-    }
-    pokemon_v2_pokemon_aggregate {
-      aggregate {
-        count
+      pokemon_v2_pokemonspecy {
+        id
+        pokemon_v2_pokemonspeciesnames(where: {language_id: {_eq: 5}}) {
+          id
+          name
+        }
       }
     }
   }

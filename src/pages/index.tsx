@@ -4,7 +4,7 @@ import client from 'api/client';
 
 import PokemonList from 'components/PokemonList/PokemonList';
 
-const containerStyle = 'container mx-auto';
+const containerStyle = 'mx-auto bg-slate-900 p-20';
 
 const App = () => {
   return (

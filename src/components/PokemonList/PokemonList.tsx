@@ -16,9 +16,9 @@ const PokemonList = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-8">
         {pokemons.map((pokemon: Pokemon) => (
-          <PokemonCard key={pokemon.name} pokemon={pokemon} />
+          <PokemonCard key={pokemon.id} pokemon={pokemon} />
         ))}
       </div>
     </div>

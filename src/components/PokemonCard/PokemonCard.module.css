@@ -61,6 +61,14 @@
     transform: perspective(900px) translateY(-5%) rotateX(15deg) translateZ(0);
 }
 
+.favourite {
+    transition: all 0.5s;
+}
+
+.card:hover .favourite {
+    transform: perspective(900px) translateY(-25%) rotateX(15deg) translateZ(0);
+}
+
 .cardOverlay {
     position: absolute;
     border-radius: 10px;

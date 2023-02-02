@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { Luckiest_Guy } from '@next/font/google';
-import { Pokemon } from 'models/Pokemon';
+import Image from 'next/image';
+
+import { IPokemon } from 'types/Pokemon';
 
 import styles from './PokemonCard.module.css';
-import Image from 'next/image';
-import FavouriteButton from '../FavouriteButton/FavouriteButton';
+import FavouriteButton from 'components/FavouriteButton/FavouriteButton';
 
 interface IPokemonCard {
-  pokemon: Pokemon
+  pokemon: IPokemon,
+  isFavourite: boolean,
+  toggleFavourite: () => void
 }
 
 const luckiest_Guy = Luckiest_Guy({
@@ -15,22 +18,20 @@ const luckiest_Guy = Luckiest_Guy({
   subsets: ['latin']
 });
 
-const PokemonCard = ({ pokemon }: IPokemonCard) => {
+const PokemonCard = ({ pokemon, isFavourite, toggleFavourite }: IPokemonCard) => {
   const { id, name, types } = pokemon;
-  const [isFav, setIsFav] = useState(false);
 
   const firstType = types[0];
   const cardStyle = styles[firstType] || styles.normal;
   const artImage = `/images/pokemons/official-artwork/${id}.png`;
   const shinyImage = `/images/pokemons/official-artwork/shiny/${id}.png`;
-  const onClick = () => setIsFav(!isFav);
   // const artImage = `/images/pokemons/dream-world/${id}.svg`;
   // const shinyImage = `/images/pokemons/dream-world/${id}.svg`;
 
   return (
     <div key={id} className={`flex relative justify-center w-full ${styles.card}`}>
       <div className={`absolute -top-3 -right-3 z-20 ${styles.favourite}`}>
-        <FavouriteButton isActive={isFav} onClick={onClick} />
+        <FavouriteButton isActive={isFavourite} onClick={toggleFavourite} />
       </div>
       <div className={`relative flex w-full p-6 ${styles.wrapper} ${cardStyle}`}>
         <div className={styles.cardOverlay} />

@@ -7,6 +7,9 @@ import { useLazyQuery } from '@apollo/client';
 import GET_POKEMONS from '../api/queries/getPokemons';
 import dataToPokemons from '../api/mappers/dataToPokemons';
 import { LIMIT } from '../utils/constants';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../redux/store';
+import { toggleFavourite } from '../redux/favourites/favouritesSlice';
 
 const containerStyle = 'mx-auto bg-slate-900 px-32 py-20';
 
@@ -18,6 +21,10 @@ const Index = () => {
 
   const [getPokemonsQuery, { data, loading, error }] = useLazyQuery(GET_POKEMONS);
   const { data: pokemons, total } = dataToPokemons(data);
+
+  const dispatch = useDispatch();
+  const onToggleFavourite = (id: number) => dispatch(toggleFavourite(id));
+  const favourites = useSelector((state: RootState) => state.favourites.favourites);
 
   useEffect(() => {
     if (total > 0) {
@@ -36,7 +43,12 @@ const Index = () => {
   return (
     <div className={containerStyle}>
       <Pagination pageId={pageId} total={cachedTotal} setPageId={setPageId} />
-      <PokemonList pokemons={pokemons} loading={loading} />
+      <PokemonList
+        pokemons={pokemons}
+        loading={loading}
+        favourites={favourites}
+        onToggleFavourite={onToggleFavourite}
+      />
       <Pagination pageId={pageId} total={cachedTotal} setPageId={setPageId} />
     </div>
   );

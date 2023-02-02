@@ -3,8 +3,8 @@ import { IPagination } from 'components/Pagination/Pagination';
 
 import getPaginationList from './getPaginationList';
 
-const paginationButtonStyle = 'md:flex justify-center items-center cursor-pointer px-3 transition duration-150 ease-in rounded-full';
-const activeStyle = 'text-red-700';
+const paginationButtonStyle = 'md:flex justify-center items-center cursor-pointer px-3 hover:text-purple-500 hover:font-bold';
+const activeStyle = 'font-bold text-orange-500';
 
 const PaginationButtonsList = ({ pageId, total, setPageId }: IPagination) => {
   const paginationButtons = getPaginationList({ pageId, total });
@@ -22,7 +22,7 @@ const PaginationButtonsList = ({ pageId, total, setPageId }: IPagination) => {
       <div
         key={key}
         onClick={onClick}
-        className={`${paginationButtonStyle} ${isActive ? activeStyle : null}`}
+        className={`${paginationButtonStyle} ${isActive ? activeStyle : ''}`}
       >
         {item}
       </div>

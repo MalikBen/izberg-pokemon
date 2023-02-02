@@ -1,5 +1,4 @@
 import { IPagination } from 'components/Pagination/Pagination';
-import { LIMIT } from 'utils/constants';
 import getTotalPages from 'components/Pagination/getTotalPages';
 
 const getPaginationList = ({ pageId, total }: IPagination): number[] => {

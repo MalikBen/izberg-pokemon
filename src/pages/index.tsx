@@ -36,7 +36,7 @@ const Index = () => {
   return (
     <div className={containerStyle}>
       <Pagination pageId={pageId} total={cachedTotal} setPageId={setPageId} />
-        <PokemonList pokemons={pokemons} loading={loading} />
+      <PokemonList pokemons={pokemons} loading={loading} />
       <Pagination pageId={pageId} total={cachedTotal} setPageId={setPageId} />
     </div>
   );

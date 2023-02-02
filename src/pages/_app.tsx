@@ -6,8 +6,9 @@ import { Inter } from '@next/font/google';
 import client from 'api/client';
 
 const inter = Inter({
-  weight: '400',
-  subsets: ['latin']
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  display: 'fallback'
 });
 
 export default function App({ Component, pageProps }: AppProps) {

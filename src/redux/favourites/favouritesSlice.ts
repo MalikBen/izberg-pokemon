@@ -5,7 +5,7 @@ interface IInitialState {
 }
 
 const initialState: IInitialState = {
-  favourites: []
+  favourites: [],
 };
 
 export const favouritesSlice = createSlice({
@@ -18,9 +18,9 @@ export const favouritesSlice = createSlice({
         state.favourites.splice(index, 1);
         return;
       }
-      state.favourites.push(action.payload)
-    }
-  }
+      state.favourites.push(action.payload);
+    },
+  },
 });
 
 export const { toggleFavourite } = favouritesSlice.actions;

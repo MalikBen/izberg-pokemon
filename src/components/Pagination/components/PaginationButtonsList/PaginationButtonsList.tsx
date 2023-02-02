@@ -27,10 +27,9 @@ const PaginationButtonsList = ({ pageId, total, setPageId }: IPagination) => {
         {item}
       </div>
     );
-
   });
 
-  return <>{content}</>
+  return <>{content}</>;
 };
 
 export default PaginationButtonsList;

@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useLazyQuery } from '@apollo/client';
+import { useDispatch, useSelector } from 'react-redux';
 
 import PokemonList from 'components/PokemonList/PokemonList';
-
 import Pagination from 'components/Pagination/Pagination';
-import { useLazyQuery } from '@apollo/client';
-import GET_POKEMONS from '../api/queries/getPokemons';
-import dataToPokemons from '../api/mappers/dataToPokemons';
-import { LIMIT } from '../utils/constants';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../redux/store';
-import { toggleFavourite } from '../redux/favourites/favouritesSlice';
+import GET_POKEMONS from 'api/queries/getPokemons';
+import dataToPokemons from 'api/mappers/dataToPokemons';
+import { LIMIT } from 'utils/constants';
+import { RootState } from 'redux/store';
+import { toggleFavourite } from 'redux/favourites/favouritesSlice';
 
 const containerStyle = 'mx-auto bg-slate-900 px-32 py-20';
 

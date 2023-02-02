@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Luckiest_Guy } from '@next/font/google';
 import Image from 'next/image';
 
 import { IPokemon } from 'types/Pokemon';
 
-import styles from './PokemonCard.module.css';
 import FavouriteButton from 'components/FavouriteButton/FavouriteButton';
+import styles from './PokemonCard.module.css';
 
 interface IPokemonCard {
   pokemon: IPokemon,
@@ -13,9 +13,9 @@ interface IPokemonCard {
   toggleFavourite: () => void
 }
 
-const luckiest_Guy = Luckiest_Guy({
+const luckiestGuy = Luckiest_Guy({
   weight: '400',
-  subsets: ['latin']
+  subsets: ['latin'],
 });
 
 const PokemonCard = ({ pokemon, isFavourite, toggleFavourite }: IPokemonCard) => {
@@ -37,14 +37,14 @@ const PokemonCard = ({ pokemon, isFavourite, toggleFavourite }: IPokemonCard) =>
         <div className={styles.cardOverlay} />
         <div className={styles.blur} />
         <div className={`absolute inset-6 art ${styles.artContainer}`}>
-          <Image className={styles.artImage} src={artImage} alt={name} fill style={{objectFit: 'contain'}} />
+          <Image className={styles.artImage} src={artImage} alt={name} fill style={{ objectFit: 'contain' }} />
         </div>
       </div>
       <div className={`absolute inset-6 art ${styles.shinyContainer}`}>
         <Image src={shinyImage} alt={name} fill style={{ objectFit: 'contain' }} />
       </div>
       <div className={`absolute bottom-8 text-center ${styles.titleContainer}`}>
-        <div className={`text-3xl leading-6 tracking-wider uppercase text-yellow-200 ${luckiest_Guy.className}`}>{name}</div>
+        <div className={`text-3xl leading-6 tracking-wider uppercase text-yellow-200 ${luckiestGuy.className}`}>{name}</div>
         <div className="uppercase text-sm text-white">{types.join(' | ')}</div>
       </div>
     </div>

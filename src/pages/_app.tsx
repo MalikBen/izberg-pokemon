@@ -10,7 +10,7 @@ import store from 'redux/store';
 const inter = Inter({
   weight: ['400', '700'],
   subsets: ['latin'],
-  display: 'fallback'
+  display: 'fallback',
 });
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -23,4 +23,4 @@ export default function App({ Component, pageProps }: AppProps) {
       </Provider>
     </ApolloProvider>
   );
-};
+}

@@ -1,5 +1,4 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
 import PokemonCard from 'components/PokemonCard/PokemonCard';
 import PokemonListSkeleton from 'components/PokemonList/components/PokemonListSkeleton';
@@ -13,11 +12,10 @@ interface IPokemonList {
 }
 
 const PokemonList = ({
-  pokemons = [], loading, favourites, onToggleFavourite
+  pokemons = [], loading, favourites, onToggleFavourite,
 }: IPokemonList) => {
-
-  const content = loading ? 
-    <PokemonListSkeleton cardsNumber={8} />
+  const content = loading
+    ? <PokemonListSkeleton cardsNumber={8} />
     : pokemons.map((pokemon: IPokemon) => {
       const isFavourite = favourites.includes(pokemon.id);
       const toggleFavourite = () => onToggleFavourite(pokemon.id);
@@ -30,7 +28,7 @@ const PokemonList = ({
           toggleFavourite={toggleFavourite}
         />
       );
-  });
+    });
 
   return (
     <div className="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-8">

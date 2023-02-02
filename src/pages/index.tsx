@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import PokemonList from 'components/PokemonList/PokemonList';
 
@@ -14,16 +14,20 @@ export type IPageId = number;
 
 const Index = () => {
   const [pageId, setPageId] = useState<IPageId>(0);
+  const [cachedTotal, setCachedTotal] = useState<IPageId>(0);
+
   const [getPokemonsQuery, { data, loading, error }] = useLazyQuery(GET_POKEMONS);
   const { data: pokemons, total } = dataToPokemons(data);
 
   useEffect(() => {
-    getPokemonsQuery({ variables: { limit: LIMIT, offset: pageId * LIMIT } });
-  }, [getPokemonsQuery, pageId])
+    if (total > 0) {
+      setCachedTotal(total);
+    }
+  }, [setCachedTotal, total]);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  useEffect(() => {
+    getPokemonsQuery({ variables: { limit: LIMIT, offset: pageId * LIMIT } });
+  }, [getPokemonsQuery, pageId]);
 
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -31,9 +35,9 @@ const Index = () => {
 
   return (
     <div className={containerStyle}>
-      <Pagination pageId={pageId} total={total} setPageId={setPageId} />
-      <PokemonList pokemons={pokemons} />
-      <Pagination pageId={pageId} total={total} setPageId={setPageId} />
+      <Pagination pageId={pageId} total={cachedTotal} setPageId={setPageId} />
+        <PokemonList pokemons={pokemons} loading={loading} />
+      <Pagination pageId={pageId} total={cachedTotal} setPageId={setPageId} />
     </div>
   );
 };

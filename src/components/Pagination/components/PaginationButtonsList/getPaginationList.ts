@@ -1,14 +1,13 @@
 import { IPagination } from 'components/Pagination/Pagination';
 import { LIMIT } from 'utils/constants';
+import getTotalPages from 'components/Pagination/getTotalPages';
 
 const getPaginationList = ({ pageId, total }: IPagination): number[] => {
   if (pageId === null) {
     return [];
   }
-  const totalPages = Math.ceil(total / LIMIT);
-  if (pageId === 0) {
-    return [1, 2, 3, -1, totalPages];
-  }
+
+  const totalPages = getTotalPages(total);
 
   if (pageId < 3) {
     return [1, 2, 3, 4, -1, totalPages];

@@ -12,7 +12,7 @@ interface IPokemonCard {
 const luckiest_Guy = Luckiest_Guy({
   weight: '400',
   subsets: ['latin']
-})
+});
 
 const PokemonCard = ({ pokemon }: IPokemonCard) => {
   const { id, name, types } = pokemon;

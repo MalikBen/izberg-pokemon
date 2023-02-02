@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 const GET_POKEMONS = gql`
-  query samplePokeAPIquery {
-    pokemon_v2_pokemon {
+  query samplePokeAPIquery ($limit: Int, $offset: Int){
+    pokemon_v2_pokemon (limit: $limit, offset: $offset){
       id
       pokemon_v2_pokemontypes {
         id
@@ -17,6 +17,11 @@ const GET_POKEMONS = gql`
           id
           name
         }
+      }
+    }
+    pokemon_v2_pokemon_aggregate {
+      aggregate {
+        count
       }
     }
   }

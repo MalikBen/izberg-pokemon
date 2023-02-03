@@ -1,4 +1,4 @@
-import { ChevronDoubleLeftIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import React from 'react';
 
 import PaginationButtonsList from './components/PaginationButtonsList/PaginationButtonsList';

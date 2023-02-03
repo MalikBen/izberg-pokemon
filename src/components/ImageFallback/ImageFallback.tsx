@@ -7,7 +7,7 @@ interface IImageWithFallback {
   src: string;
   alt: string;
   className?: string;
-};
+}
 
 const ImageWithFallback = ({ src, alt, className }: IImageWithFallback) => {
   const [imgSrc, setImgSrc] = useState(src);

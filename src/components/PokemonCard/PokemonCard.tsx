@@ -1,26 +1,19 @@
 import React from 'react';
-import { Luckiest_Guy } from '@next/font/google';
-import Image from 'next/image';
 
 import { IPokemon } from 'types/Pokemon';
-
 import FavouriteButton from 'components/FavouriteButton/FavouriteButton';
+import ImageWithFallback from 'components/ImageFallback/ImageFallback';
 import { artUrl, shinyUrl } from 'utils/constants';
+import { luckiestGuy } from 'utils/fonts';
 
 import styles from './PokemonCard.module.css';
 import colorStyles from './PokemonCardColors.module.css';
-import ImageWithFallback from '../ImageFallback/ImageFallback';
 
 interface IPokemonCard {
   pokemon: IPokemon,
   isFavourite: boolean,
   toggleFavourite: () => void
 }
-
-const luckiestGuy = Luckiest_Guy({
-  weight: '400',
-  subsets: ['latin'],
-});
 
 const PokemonCard = ({ pokemon, isFavourite, toggleFavourite }: IPokemonCard) => {
   const { id, name, types } = pokemon;

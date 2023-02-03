@@ -20,7 +20,7 @@ const PaginationButton = ({ onClick, value, isActive }: IPaginationButton) => {
     >
       {value}
     </div>
-  )
+  );
 };
 
 export default PaginationButton;

@@ -1,22 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { useDispatch, useSelector } from 'react-redux';
-import { Luckiest_Guy } from '@next/font/google';
 
 import PokemonList from 'components/PokemonList/PokemonList';
 import Pagination from 'components/Pagination/Pagination';
 import GET_POKEMONS from 'api/queries/getPokemons';
 import dataToPokemons from 'api/mappers/dataToPokemons';
 import { LIMIT } from 'utils/constants';
+import { luckiestGuy } from 'utils/fonts';
 import { RootState } from 'redux/store';
 import { toggleFavourite } from 'redux/favourites/favouritesSlice';
 
 export type IPageId = number;
-
-const luckiestGuy = Luckiest_Guy({
-  weight: '400',
-  subsets: ['latin'],
-});
 
 const Index = () => {
   const [pageId, setPageId] = useState<IPageId>(0);

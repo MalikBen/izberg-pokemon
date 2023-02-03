@@ -10,8 +10,6 @@ import { LIMIT } from 'utils/constants';
 import { RootState } from 'redux/store';
 import { toggleFavourite } from 'redux/favourites/favouritesSlice';
 
-const containerStyle = 'mx-auto bg-slate-900 px-32 py-20';
-
 export type IPageId = number;
 
 const Index = () => {
@@ -40,7 +38,7 @@ const Index = () => {
   }
 
   return (
-    <div className={containerStyle}>
+    <div className="mx-auto bg-slate-900 px-10 md:px-32 py-20">
       <Pagination pageId={pageId} total={cachedTotal} setPageId={setPageId} />
       <PokemonList
         pokemons={pokemons}

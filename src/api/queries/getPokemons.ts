@@ -13,7 +13,7 @@ const GET_POKEMONS = gql`
       }
       pokemon_v2_pokemonspecy {
         id
-        pokemon_v2_pokemonspeciesnames(where: {language_id: {_eq: 5}}) {
+        pokemon_v2_pokemonspeciesnames(where: {language_id: {_eq: 9}}) {
           id
           name
         }

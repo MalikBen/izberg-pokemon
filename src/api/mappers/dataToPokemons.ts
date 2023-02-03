@@ -1,46 +1,4 @@
-import { IPokemon } from 'types/Pokemon';
-
-interface IPokemonType {
-  id: number;
-  name: string;
-}
-
-interface IPokemonSpeciesName {
-  name: string;
-}
-
-interface IPokemonSpecy {
-  id: number;
-  pokemon_v2_pokemonspeciesnames: IPokemonSpeciesName[]
-}
-
-interface IPokemonTypes {
-  id: number;
-  pokemon_v2_type: IPokemonType;
-}
-
-interface IPokemonCount {
-  aggregate: {
-    count: number
-  };
-}
-
-interface IPokemonData {
-  id: number;
-  name: string;
-  pokemon_v2_pokemontypes: IPokemonTypes[];
-  pokemon_v2_pokemonspecy: IPokemonSpecy;
-}
-
-interface IData {
-  pokemon_v2_pokemon: IPokemonData[];
-  pokemon_v2_pokemon_aggregate: IPokemonCount;
-}
-
-interface IDataToPokemons {
-  data: IPokemon[],
-  total: number
-}
+import { IData, IDataToPokemons, IPokemonData } from 'types/Pokemon';
 
 const dataToPokemons = (data: IData): IDataToPokemons => {
   if (!data) {

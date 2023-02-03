@@ -1,0 +1,140 @@
+.blur {
+    backdrop-filter: blur(5px);
+    position: absolute;
+    inset: 6px;
+    border-radius: 8px;
+}
+
+/** CARDS COLORS **/
+.grass {
+    background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+}
+.grass .blur {
+    background: rgba(38, 108, 54, 0.6);
+}
+
+.psychic {
+    background-image: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%);
+}
+.psychic .blur {
+    background: rgba(80, 3, 70, 0.6);
+}
+
+.normal {
+    background: linear-gradient(to top, #bca534 0%, #f7f2ab 100%);
+}
+.normal .blur {
+    background: rgba(164, 141, 29, 0.6);
+}
+
+.fire {
+    background-image: linear-gradient(to top, #f83600 0%, #f9d423 100%);
+}
+.fire .blur {
+    background: rgba(121, 15, 15, 0.6);
+}
+
+.water {
+    background-image: linear-gradient(to top, #209cff 0%, #68e0cf 100%);
+}
+.water .blur {
+    background: rgba(15, 98, 121, 0.6);
+}
+
+.electric {
+    background-image: linear-gradient(-225deg, #FF057C 0%, #7C64D5 48%, #4CC3FF 100%);
+}
+.electric .blur {
+    background: rgba(96, 30, 143, 0.6);
+}
+
+.dark {
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+.dark .blur {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.dragon {
+    background: linear-gradient(to top, #93291e, #ed213a);
+}
+.dragon .blur {
+    background: rgba(106, 8, 8, 0.6);
+}
+
+.fairy {
+    background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
+}
+.fairy .blur {
+    background: rgba(102, 8, 106, 0.6);
+}
+
+.steel {
+    background: linear-gradient(to top, #2c3e50, #bdc3c7);
+}
+.steel .blur {
+    background: rgba(93, 93, 93, 0.6);
+}
+
+.bug {
+    background: linear-gradient(to top, #5cb270 0%, #f4f167 100%);
+}
+.bug .blur {
+    background: rgba(8, 123, 37, 0.6);
+}
+
+.poison {
+    background: linear-gradient(to top, #001510, #00bf8f);
+}
+.poison .blur {
+    background: rgba(7, 100, 74, 0.6);
+}
+
+.ground {
+    background: linear-gradient(to top, #d1913c, #ffd194);
+} 
+.ground .blur {
+    background: rgba(133, 113, 52, 0.6);
+}
+
+.flying {
+    background: linear-gradient(to top, #2980b9, #6dd5fa, #ffffff);
+} 
+.flying .blur {
+    background: rgba(52, 126, 133, 0.6);
+}
+
+.ice {
+    background-image: linear-gradient(to top, #D7FFFE, #FFFEFF);
+}
+.ice .blur {
+    background: rgba(128, 197, 204, 0.6);
+}
+
+.ghost {
+    background-image: linear-gradient(to top, #E3FDF5, #FFE6FA);
+}
+.ghost .blur {
+    background: rgba(168, 221, 221, 0.6);
+}
+
+.fighting {
+    background-image: linear-gradient(to top, #FFE29F, #FFA99F, #FF719A);
+}
+.fighting .blur {
+    background: rgba(136, 59, 59, 0.6);
+}
+
+.rock {
+    background-image: linear-gradient(to top, #616161, #9bc5c3);
+}
+.rock .blur {
+    background: rgba(168, 221, 221, 0.6);
+}
+
+.skeleton {
+    background-image: linear-gradient(60deg, #040404 0%, #242527 100%);
+}
+.skeleton .blur {
+    background: rgba(0, 0, 0, 0.6);
+}

@@ -1,3 +1,4 @@
+import { ChevronDoubleLeftIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import React from 'react';
 
 import PaginationButtonsList from './components/PaginationButtonsList/PaginationButtonsList';
@@ -10,7 +11,7 @@ export interface IPagination {
   setPageId?: (id: number) => void;
 }
 
-const chevronStyle = 'w-8 h-8 flex justify-center items-center rounded-full bg-gray-200 cursor-pointer hover:font-bold hover:text-purple-500';
+const chevronStyle = 'w-8 h-8 flex justify-center items-center rounded-full bg-gray-200 cursor-pointer p-2 hover:text-purple-500 hover:scale-110 transition-all';
 
 const Pagination = ({ pageId, total, setPageId }: IPagination) => {
   const totalPages = getTotalPages(total);
@@ -27,16 +28,16 @@ const Pagination = ({ pageId, total, setPageId }: IPagination) => {
         {
           activePrevButton
           && <div className={`${chevronStyle} mr-1`} onClick={onPrevious}>
-            {'<'}
+            <ChevronLeftIcon className="w-full h-full" />
           </div>
         }
-        <div className="flex h-8 font-medium rounded-full bg-gray-200">
+        <div className="flex min-w-[12em] justify-around h-8 font-medium rounded-full bg-gray-200 px-2">
           <PaginationButtonsList pageId={pageId} total={total} setPageId={setPageId} />
         </div>
         {
           activeNextButton
           && <div className={`${chevronStyle} ml-1`} onClick={onNext}>
-            {'>'}
+            <ChevronRightIcon className="w-full h-full" />
           </div>
         }
       </div>

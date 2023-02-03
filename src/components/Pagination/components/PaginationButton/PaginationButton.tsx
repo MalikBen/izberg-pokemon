@@ -1,7 +1,26 @@
 import React from 'react';
 
-const PaginationButton = () => (
-    <div className="w-8 md:flex justify-center items-center hidden cursor-pointer leading-5 transition duration-150 ease-in rounded-full">1</div>
-);
+interface IPaginationButton {
+  onClick: () => void;
+  value: number;
+  isActive: boolean;
+}
+
+const paginationButtonStyle = 'flex px-2 justify-center items-center cursor-pointer hover:text-purple-500 hover:font-bold';
+
+const PaginationButton = ({ onClick, value, isActive }: IPaginationButton) => {
+  if (value < 0) {
+    return <div>...</div>;
+  }
+  const activeStyle = isActive ? 'font-bold text-orange-500' : '';
+  return (
+    <div
+      className={`${paginationButtonStyle} ${activeStyle}`}
+      onClick={onClick}
+    >
+      {value}
+    </div>
+  )
+};
 
 export default PaginationButton;

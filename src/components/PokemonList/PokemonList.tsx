@@ -31,7 +31,7 @@ const PokemonList = ({
     });
 
   return (
-    <div className="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-8">
+    <div className="grid grid-cols-[repeat(auto-fit,_minmax(160px,_1fr))] md:grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-8">
       {content}
     </div>
   );

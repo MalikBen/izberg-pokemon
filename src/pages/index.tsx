@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { useDispatch, useSelector } from 'react-redux';
+import { Luckiest_Guy } from '@next/font/google';
 
 import PokemonList from 'components/PokemonList/PokemonList';
 import Pagination from 'components/Pagination/Pagination';
@@ -11,6 +12,11 @@ import { RootState } from 'redux/store';
 import { toggleFavourite } from 'redux/favourites/favouritesSlice';
 
 export type IPageId = number;
+
+const luckiestGuy = Luckiest_Guy({
+  weight: '400',
+  subsets: ['latin'],
+});
 
 const Index = () => {
   const [pageId, setPageId] = useState<IPageId>(0);
@@ -39,7 +45,12 @@ const Index = () => {
 
   return (
     <div className="mx-auto bg-slate-900 px-10 md:px-32 py-20">
-      <Pagination pageId={pageId} total={cachedTotal} setPageId={setPageId} />
+      <div className="flex flex-wrap flex-col md:flex-row justify-between items-center">
+        <div className={`text-yellow-400 text-5xl ${luckiestGuy.className}`}>
+          Pokemon List
+        </div>
+        <Pagination pageId={pageId} total={cachedTotal} setPageId={setPageId} />
+      </div>
       <PokemonList
         pokemons={pokemons}
         loading={loading}
